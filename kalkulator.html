@@ -1,0 +1,97 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Artikel</title>
+        <link href="https://fonts.cdnfonts.com/css/times-new-roman" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            @import url('https://fonts.cdnfonts.com/css/times-new-roman');
+            body {
+                font-family: "Times New Roman", sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Artikel</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link " href="index_link.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="artikel.html">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="buku_tamu.html">Buku Tamu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Jadwal_Kuliah.html">Jadwal Kuliah</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Pendidikan.html">Pendidikan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="latihan2.html">harga barang</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="java_scrip.html">JavaScript</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="kalkulator.html">Kalkulator</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+<h1>Kalkulator Sederhana</h1>
+    <p>Masukkan angka pertama:</p>
+    <input type="text" id="angka1" placeholder="Angka pertama">
+    <p>Pilih operasi:</p>
+    <select id="operasi">
+        <option value="tambah">Penambahan (+)</option>
+        <option value="kurang">Pengurangan (-)</option>
+        <option value="kali">Perkalian (*)</option>
+        <option value="bagi">Pembagian (/)</option>
+    </select>
+    <p>Masukkan angka kedua:</p>
+    <input type="text" id="angka2" placeholder="Angka kedua">
+    <button onclick="hitung()">Hitung</button>
+    <p>Hasil: <span id="hasil"></span></p>
+    <br><br><br>
+    <footer class="text-center mt-5">
+        <p>&copy; 2023. Credit by <a href="https://instagram.com/mhmdjalill_?igshid=OGQ5ZDc2ODk2ZA==">Muhammad Jalil</a></p>
+    </footer Tautan ke Bootstrap JavaScript dan jQuery (Diperlukan untuk komponen Bootstrap) -->
+
+    <script>
+        function hitung() {
+            // Ambil nilai angka pertama, operasi, dan angka kedua dari input
+            var angka1 = parseFloat(document.getElementById("angka1").value);
+            var operasi = document.getElementById("operasi").value;
+            var angka2 = parseFloat(document.getElementById("angka2").value);
+
+            // Hitung berdasarkan operasi yang dipilih
+            var hasil;
+            if (operasi === "tambah") {
+                hasil = angka1 + angka2;
+            } else if (operasi === "kurang") {
+                hasil = angka1 - angka2;
+            } else if (operasi === "kali") {
+                hasil = angka1 * angka2;
+            } else if (operasi === "bagi") {
+                if (angka2 === 0) {
+                    alert("Pembagian dengan nol tidak diizinkan.");
+                    return;
+                }
+                hasil = angka1 / angka2;
+            }
+
+            // Tampilkan hasil
+            document.getElementById("hasil").textContent = hasil;
+        }
+    </script>
